@@ -135,6 +135,7 @@ section :last-child {
 
 	.welcome {
 		display: flex;
+		display: -webkit-flex;
 		border-radius: 2px;
 		overflow: hidden;
 		box-shadow: 0 0 3px hsla(0, 0%, 0%, 0.2);
@@ -145,11 +146,13 @@ section :last-child {
 		height: auto;
 		margin: 0;
 		flex: 1;
+		-webkit-flex: 1;
 	}
 
 	.letter {
 		margin: 0;
-		flex: 2;
+		flex: 1.6;
+		-webkit-flex: 1.6;
 		border-radius: 0;
 		box-shadow: none;
 	}
