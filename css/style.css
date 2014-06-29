@@ -169,9 +169,7 @@ section :last-child {
 @media screen and (min-width: 900px) {
   .container {
     margin: 0 0 0 35%;
-    padding: 0 5rem;
-    height: 1800px;
-    /*temp*/ }
+    padding: 0 5rem; }
 
   header {
     text-align: left;
