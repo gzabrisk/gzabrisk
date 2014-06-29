@@ -60,24 +60,32 @@ hr {
 /* Core */
 /* --------------------------------------------------- */
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  height: 100%; }
 
 body {
   font-family: 'Source Sans Pro', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
   color: #404040;
-  background: #f7f7f7;
-  line-height: 1;
+  background: #f2f2f2;
+  line-height: 1; }
+
+.container {
   margin: 0 auto;
   padding: 0 1.8rem;
-  max-width: 750px; }
+  max-width: 580px;
+  height: 100%; }
 
 a {
   color: #4d4d4d; }
   a:hover {
     color: black; }
 
+.hidden {
+  position: absolute;
+  left: -9999em; }
+
 header {
-  margin: 2rem 0;
+  margin: 2rem 0 0;
   text-align: center; }
   header h1 {
     font-size: 3.6rem;
@@ -88,21 +96,48 @@ header {
     margin: 0.7rem 0 0;
     color: gray;
     font-weight: 300; }
+  header:after {
+    content: "";
+    display: block;
+    height: 24rem;
+    background: url(../images/grant.jpg) no-repeat center 10%;
+    background-size: 120%;
+    margin: 2rem -1.8rem 0; }
 
-.pic {
-  height: 24rem;
-  background: url(../images/grant.jpg) no-repeat center 10%;
-  background-size: 120%;
-  margin: 0 -1.8rem; }
+section {
+  background: white;
+  padding: 2rem 2.4rem;
+  margin: 0 0 2.4rem;
+  font-size: 1.7rem;
+  font-weight: 300;
+  line-height: 1.4em;
+  border-radius: 2px;
+  border-bottom: 2px solid #dbdbdb;
+  border-right: 2px solid #dbdbdb; }
+  section h2 {
+    font-weight: 300;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0 0 2rem; }
+  section p {
+    margin: 0 0 0.9rem; }
+  section ul.block a {
+    font-weight: 600;
+    font-size: 1.6rem;
+    text-decoration: none;
+    display: block;
+    line-height: 1.2em;
+    padding: 0.9rem 2.4rem;
+    margin: 0 -2.4rem; }
+    section ul.block a:hover {
+      background: #e6e6e6; }
 
 .letter {
   font-size: 1.8rem;
   font-weight: 300;
-  background: white;
-  padding: 2rem 2.4rem;
-  margin: -4rem 0 0;
-  border-radius: 2px;
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2); }
+  margin-top: -4rem;
+  margin-bottom: 2.4rem; }
   .letter h1, .letter p {
     margin: 0 0 1em;
     line-height: 1.4em; }
@@ -112,52 +147,50 @@ header {
 
 .social {
   font-size: 1.6rem;
-  text-align: center;
-  margin: 2.4rem; }
+  text-align: center; }
   .social li {
     display: inline;
-    margin: 0 1rem; }
+    margin: 0 0.5em; }
 
 section :last-child {
   margin-bottom: 0; }
 
 @media screen and (min-width: 420px) {
-  body {
+  .container {
     padding: 0 2.4rem; }
 
-  .pic {
+  header:after {
     height: 30rem;
-    margin: 0 -2.4rem; } }
-@media screen and (min-width: 600px) {
-  html {
-    font-size: 68%; }
+    margin-left: -2.4rem;
+    margin-right: -2.4rem; } }
+@media screen and (min-width: 580px) {
+  header:after {
+    height: 34rem; } }
+@media screen and (min-width: 900px) {
+  .container {
+    margin: 0 0 0 35%;
+    padding: 0 5rem;
+    height: 1800px;
+    /*temp*/ }
 
   header {
-    margin-top: 3rem;
+    text-align: left;
+    margin: 3rem 0;
     overflow: hidden; }
     header h1 {
       float: left; }
     header p {
       float: right;
-      margin: 1.6rem 0 0; }
-
-  .welcome {
-    display: flex;
-    display: -webkit-flex;
-    border-radius: 2px;
-    overflow: hidden;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2); }
-
-  .pic {
-    background-size: cover;
-    height: auto;
-    margin: 0;
-    flex: 1;
-    -webkit-flex: 1; }
+      margin: 1.2rem 0 0; }
+    header:after {
+      background-position: center top;
+      background-size: cover;
+      margin: 0;
+      height: 100%;
+      width: 35%;
+      position: fixed;
+      left: 0;
+      top: 0; }
 
   .letter {
-    margin: 0;
-    flex: 1.6;
-    -webkit-flex: 1.6;
-    border-radius: 0;
-    box-shadow: none; } }
+    margin-top: 0; } }

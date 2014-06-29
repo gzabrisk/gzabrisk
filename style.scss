@@ -21,17 +21,22 @@ hr								{ background: #ddd; color: #ddd; clear: both; float: none; width: 100%
 /* Core */
 /* --------------------------------------------------- */
 
-html			{ font-size: 62.5%; }
+html			{ font-size: 62.5%; height: 100%; }
 
 body {
 	font-family: 'Source Sans Pro', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
 	color: hsl(0, 0%, 25%);
-	background: hsl(0, 0%, 97%);
+	background: hsl(0, 0%, 95%);
 	line-height: 1;
+}
+
+.container {
 	margin: 0 auto;
 	padding: 0 1.8rem;
-	max-width: 750px;
+	max-width: 580px;
+	height: 100%
 }
+
 
 a {
 	color: hsl(0, 0%, 30%);
@@ -41,8 +46,13 @@ a {
 	}
 }
 
+.hidden {
+	position: absolute;
+	left: -9999em;
+}
+
 header	{ 
-	margin: 2rem 0; 
+	margin: 2rem 0 0; 
 	text-align: center; 
 
 	h1 { 
@@ -57,23 +67,61 @@ header	{
 		color: hsl(0, 0%, 50%);
 		font-weight: 300;
 	}
+
+	&:after {
+		content: "";
+		display: block;
+		height: 24rem;
+		background: url(../images/grant.jpg) no-repeat center 10%;
+		background-size: 120%;
+		margin: 2rem -1.8rem 0;
+	}
 }
 
-.pic {
-	height: 24rem;
-	background: url(../images/grant.jpg) no-repeat center 10%;
-	background-size: 120%;
-	margin: 0 -1.8rem;
+section {
+	background: hsl(0, 100%, 100%);
+	padding: 2rem 2.4rem;
+	margin: 0 0 2.4rem;
+	font-size: 1.7rem;
+	font-weight: 300;
+	line-height: 1.4em;
+	border-radius: 2px;
+	border-bottom: 2px solid hsl(0, 0%, 86%);
+	border-right: 2px solid hsl(0, 0%, 86%);
+
+	h2 {
+		font-weight: 300;
+		font-size: 2rem;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		margin: 0 0 2rem;
+	}
+
+	p {
+		margin: 0 0 0.9rem;
+	}
+
+	ul.block a {
+		font-weight: 600;
+		font-size: 1.6rem;
+		text-decoration: none;
+		display: block;
+		line-height: 1.2em;
+		padding: 0.9rem 2.4rem;
+		margin: 0 -2.4rem;
+
+		&:hover {
+			background: hsl(0, 0%, 90%);
+		}
+	}
 }
+
 
 .letter {
 	font-size: 1.8rem;
 	font-weight: 300;
-	background: hsl(0, 100%, 100%);
-	padding: 2rem 2.4rem;
-	margin: -4rem 0 0;
-	border-radius: 2px;
-	box-shadow: 0 0 3px hsla(0, 0%, 0%, 0.2);
+	margin-top: -4rem;
+	margin-bottom: 2.4rem;
 
 	h1, p {
 		margin: 0 0 1em;
@@ -90,38 +138,48 @@ header	{
 .social {
 	font-size: 1.6rem;
 	text-align: center;
-	margin: 2.4rem;
 	
 	li {
 		display: inline;
-		margin: 0 1rem;
+		margin: 0 0.5em;
 	}
+
 }
 
 section :last-child {
 	margin-bottom: 0;
 }
 
+
 @media screen and (min-width: 420px) {
-	body {
+	.container {
 		padding: 0 2.4rem;
 	}
 
-	.pic {
+	header:after {
 		height: 30rem;
-		margin: 0 -2.4rem;
+		margin-left: -2.4rem;
+		margin-right: -2.4rem;
 	}
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 580px) {
+	header:after {
+		height: 34rem;
+	}	
+}
+@media screen and (min-width: 900px) {
 
-	html { 
-		font-size: 68%;
+	.container {
+		margin: 0 0 0 35%;
+		padding: 0 5rem;
+		height: 1800px; /*temp*/
 	}
 
 	header {
-		margin-top: 3rem; 
-		overflow: hidden; 	
+		text-align: left;
+		margin: 3rem 0;
+		overflow: hidden; 
 
 		h1 {
 			float: left;
@@ -129,32 +187,30 @@ section :last-child {
 
 		p {
 			float: right;
-			margin: 1.6rem 0 0;
+			margin: 1.2rem 0 0;
+			
 		}
-	}
 
-	.welcome {
-		display: flex;
-		display: -webkit-flex;
-		border-radius: 2px;
-		overflow: hidden;
-		box-shadow: 0 0 3px hsla(0, 0%, 0%, 0.2);
-	}
+		&:after {
+			background-position: center top;
+			background-size: cover;
+			margin: 0;
+			height: 100%;
+			width: 35%;
+			position: fixed;
+			left: 0;
+			top: 0;
+		}
 
-	.pic {
-		background-size: cover;
-		height: auto;
-		margin: 0;
-		flex: 1;
-		-webkit-flex: 1;
 	}
 
 	.letter {
-		margin: 0;
-		flex: 1.6;
-		-webkit-flex: 1.6;
-		border-radius: 0;
-		box-shadow: none;
+		margin-top: 0;
 	}
+
+}
+
+@media screen and (min-width: 900px) {
+
 
 }
