@@ -5,6 +5,12 @@ $vdist: 2rem;
 $hdist: $vdist * 1.2;
 $dashed: 1px dashed hsl(0, 0%, 80%);
 
+@mixin group {
+	content: "";
+	display: table;
+	clear: both;
+}
+
 @mixin pad {
 	padding: $vdist $hdist;
 }
@@ -150,6 +156,40 @@ section {
 		}
 	}
 
+	ul.thumbs {
+
+		&:after {
+			@include group;
+		}
+
+		li {
+			float: left;
+			width: 50%;
+			text-indent: -9999em;
+			height: 12rem;
+		}
+
+		a {
+			display: block;
+			background-repeat: no-repeat;
+			background-size: 100%;
+			background-position: center top;
+			height: 100%;
+			width: 100%;
+			transition: all ease 0.15s;
+			position: relative;
+
+			&:hover {
+				background-size: 110%;
+				box-shadow: 0 0 12px hsla(0, 0%, 0%, 0.7);
+				z-index: 100;
+				height: 110%;
+				width: 110%;
+				margin: -5% 0 0 -5%;
+			}
+		}
+	}
+
 	.video {
 		position: relative;
 		padding-bottom: 56.25%;
@@ -228,7 +268,6 @@ section {
 }
 
 
-
 @media screen and (min-width: 420px) {
 	.site {
 		padding: 0 2.4rem;
@@ -238,6 +277,10 @@ section {
 		height: 30rem;
 		margin-left: -2.4rem;
 		margin-right: -2.4rem;
+	}
+
+	section ul.thumbs li {
+		width: 33.333333333%;
 	}
 }
 
@@ -279,6 +322,10 @@ section {
 			top: 0;
 		}
 
+	}
+
+	section {
+		margin: 0 0 $hdist * 1.5;
 	}
 
 	.letter {
