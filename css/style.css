@@ -134,6 +134,8 @@ section {
       float: left;
       width: 33.3333333%;
       border-right: 1px dashed #cccccc; }
+      .letter .social li:last-child {
+        border: none; }
     .letter .social a {
       text-decoration: none;
       display: block;

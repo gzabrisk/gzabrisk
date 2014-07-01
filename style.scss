@@ -197,7 +197,12 @@ section {
 			float: left;
 			width: 33.3333333%;
 			border-right: $dashed;
+
+			&:last-child {
+				border: none;
+			}
 		}
+
 
 		a {
 			text-decoration: none;
