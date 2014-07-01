@@ -69,34 +69,39 @@ body {
   background: #f2f2f2;
   line-height: 1; }
 
-.container {
-  margin: 0 auto;
-  padding: 0 1.8rem;
-  max-width: 580px;
-  height: 100%; }
-
 a {
   color: #4d4d4d; }
   a:hover {
     color: black; }
 
+hr {
+  background: none;
+  margin: 3rem 0 3rem;
+  border-bottom: 1px dashed #cccccc; }
+
 .hidden {
   position: absolute;
   left: -9999em; }
 
-header {
+.site {
+  margin: 0 auto;
+  padding: 0 1.8rem;
+  max-width: 580px;
+  height: 100%; }
+
+.site-header {
   margin: 2rem 0 0;
   text-align: center; }
-  header h1 {
+  .site-header h1 {
     font-size: 3.6rem;
     font-weight: 600;
     letter-spacing: -0.1rem; }
-  header p {
+  .site-header p {
     font-size: 1.8rem;
     margin: 0.7rem 0 0;
     color: gray;
     font-weight: 300; }
-  header:after {
+  .site-header:after {
     content: "";
     display: block;
     height: 24rem;
@@ -107,13 +112,13 @@ header {
 section {
   background: white;
   padding: 2rem 2.4rem;
-  margin: 0 0 2.4rem;
+  margin: 0 0 3rem;
   font-size: 1.7rem;
   font-weight: 300;
   line-height: 1.4em;
   border-radius: 2px;
-  border-bottom: 2px solid #dbdbdb;
-  border-right: 2px solid #dbdbdb; }
+  overflow: hidden;
+  box-shadow: 0 0 3px rgba(93, 98, 111, 0.3); }
   section h2 {
     font-weight: 300;
     font-size: 2rem;
@@ -122,6 +127,17 @@ section {
     margin: 0 0 2rem; }
   section p {
     margin: 0 0 0.9rem; }
+  section header {
+    margin: -2rem -2.4rem 2rem;
+    padding: 2rem 2.4rem;
+    border-bottom: 1px dashed #d9d9d9; }
+    section header h2 {
+      margin: 0 0 1.33333rem; }
+    section header p {
+      font-size: 1.5rem;
+      line-height: 1.4em; }
+    section header a {
+      color: inherit; }
   section ul.block a {
     font-weight: 600;
     font-size: 1.6rem;
@@ -132,6 +148,18 @@ section {
     margin: 0 -2.4rem; }
     section ul.block a:hover {
       background: #e6e6e6; }
+  section .video {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden; }
+    section .video iframe, section .video object, section .video embed {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; }
 
 .letter {
   font-size: 1.8rem;
@@ -150,37 +178,38 @@ section {
   text-align: center; }
   .social li {
     display: inline;
-    margin: 0 0.5em; }
+    margin: 0 0.5em;
+    font-weight: 400; }
 
 section :last-child {
   margin-bottom: 0; }
 
 @media screen and (min-width: 420px) {
-  .container {
+  .site {
     padding: 0 2.4rem; }
 
-  header:after {
+  .site-header:after {
     height: 30rem;
     margin-left: -2.4rem;
     margin-right: -2.4rem; } }
 @media screen and (min-width: 580px) {
-  header:after {
+  .site-header:after {
     height: 34rem; } }
 @media screen and (min-width: 900px) {
-  .container {
+  .site {
     margin: 0 0 0 35%;
     padding: 0 5rem; }
 
-  header {
+  .site-header {
     text-align: left;
     margin: 3rem 0;
     overflow: hidden; }
-    header h1 {
+    .site-header h1 {
       float: left; }
-    header p {
+    .site-header p {
       float: right;
       margin: 1.2rem 0 0; }
-    header:after {
+    .site-header:after {
       background-position: center top;
       background-size: cover;
       margin: 0;

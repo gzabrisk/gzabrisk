@@ -1,5 +1,4 @@
 /* Reset */
-
 /* --------------------------------------------------- */
 
 html							{ margin: 0; padding: 0; border: 0;	}
@@ -22,7 +21,13 @@ hr								{ background: #ddd; color: #ddd; clear: both; float: none; width: 100%
 /* Core */
 /* --------------------------------------------------- */
 
-html			{ font-size: 62.5%; height: 100%; }
+$vdist: 2rem;
+$hdist: 2.4rem;
+
+html { 
+	font-size: 62.5%;
+	height: 100%; 
+}
 
 body {
 	font-family: 'Source Sans Pro', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
@@ -30,14 +35,6 @@ body {
 	background: hsl(0, 0%, 95%);
 	line-height: 1;
 }
-
-.container {
-	margin: 0 auto;
-	padding: 0 1.8rem;
-	max-width: 580px;
-	height: 100%
-}
-
 
 a {
 	color: hsl(0, 0%, 30%);
@@ -47,12 +44,25 @@ a {
 	}
 }
 
+hr {
+	background: none;
+	margin: ($hdist * 1.25) 0 ($hdist * 1.25);
+	border-bottom: 1px dashed hsl(0, 0%, 80%);
+}
+
 .hidden {
 	position: absolute;
 	left: -9999em;
 }
 
-header	{ 
+.site {
+	margin: 0 auto;
+	padding: 0 1.8rem;
+	max-width: 580px;
+	height: 100%
+}
+
+.site-header	{ 
 	margin: 2rem 0 0; 
 	text-align: center; 
 
@@ -80,26 +90,46 @@ header	{
 }
 
 section {
+
 	background: hsl(0, 100%, 100%);
-	padding: 2rem 2.4rem;
-	margin: 0 0 2.4rem;
+	padding: $vdist $hdist;
+	margin: 0 0 $hdist * 1.25;
 	font-size: 1.7rem;
 	font-weight: 300;
 	line-height: 1.4em;
 	border-radius: 2px;
-	border-bottom: 2px solid hsl(0, 0%, 86%);
-	border-right: 2px solid hsl(0, 0%, 86%);
+	overflow: hidden;
+	box-shadow: 0 0 3px hsla(223, 9%, 40%, 0.3);
 
 	h2 {
 		font-weight: 300;
 		font-size: 2rem;
 		letter-spacing: 1px;
 		text-transform: uppercase;
-		margin: 0 0 2rem;
+		margin: 0 0 $vdist;
 	}
 
 	p {
 		margin: 0 0 0.9rem;
+	}
+
+	header {
+		margin: (-$vdist) (-$hdist) $vdist;
+		padding: $vdist $hdist;	
+		border-bottom: 1px dashed hsl(0, 0%, 85%);
+
+		h2	{
+			margin: 0 0 $vdist/1.5;
+		}
+
+		p {
+			font-size: 1.5rem;
+			line-height: 1.4em;
+		}
+
+		a {
+			color: inherit;
+		}
 	}
 
 	ul.block a {
@@ -115,6 +145,23 @@ section {
 			background: hsl(0, 0%, 90%);
 		}
 	}
+
+	.video {
+		position: relative;
+		padding-bottom: 56.25%;
+		padding-top: 30px;
+		height: 0;
+		overflow: hidden;
+
+		iframe, object, embed {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+	}
+	
 }
 
 
@@ -143,6 +190,7 @@ section {
 	li {
 		display: inline;
 		margin: 0 0.5em;
+		font-weight: 400;
 	}
 
 }
@@ -153,11 +201,11 @@ section :last-child {
 
 
 @media screen and (min-width: 420px) {
-	.container {
+	.site {
 		padding: 0 2.4rem;
 	}
 
-	header:after {
+	.site-header:after {
 		height: 30rem;
 		margin-left: -2.4rem;
 		margin-right: -2.4rem;
@@ -165,18 +213,18 @@ section :last-child {
 }
 
 @media screen and (min-width: 580px) {
-	header:after {
+	.site-header:after {
 		height: 34rem;
 	}	
 }
 @media screen and (min-width: 900px) {
 
-	.container {
+	.site {
 		margin: 0 0 0 35%;
 		padding: 0 5rem;
 	}
 
-	header {
+	.site-header {
 		text-align: left;
 		margin: 3rem 0;
 		overflow: hidden; 
