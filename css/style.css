@@ -12,8 +12,8 @@ html {
 
 body {
   font-family: 'Source Sans Pro', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
-  color: #404040;
-  background: #e3e3e3;
+  color: #4e3f31;
+  background: #e9e3dc;
   line-height: 1; }
 
 a {
@@ -41,7 +41,7 @@ a {
   .site-header p {
     font-size: 1.8rem;
     margin: 0.7rem 0 0;
-    color: gray;
+    color: #857260;
     font-weight: 300; }
   .site-header:after {
     content: "";
@@ -52,7 +52,7 @@ a {
     margin: 2rem -1.8rem 0; }
 
 section {
-  background: #fafafa;
+  background: #fbfaf9;
   margin: 0 0 3rem;
   font-size: 1.7rem;
   font-weight: 300;
@@ -69,8 +69,8 @@ section {
     margin: 0 0 0.9rem; }
   section header {
     padding: 2rem 2.4rem;
-    border-top: 3px solid #bfbfbf;
-    border-bottom: 1px dashed #cccccc;
+    border-top: 3px solid #cbbaaa;
+    border-bottom: 1px dashed #d4c6ba;
     background: white;
     position: relative;
     overflow: hidden; }
@@ -79,7 +79,7 @@ section {
       section header h2 span {
         position: relative;
         top: 0.2rem;
-        color: #cccccc;
+        color: #d8ccc0;
         float: right;
         font-size: 24px; }
     section header p {
@@ -97,7 +97,7 @@ section {
       line-height: 1.2em;
       padding: 0.9rem 2.4rem; }
       section ul.block a:hover {
-        background: #e6e6e6; }
+        background: #ebe5e0; }
   section ul.thumbs:after {
     content: "";
     display: table;
@@ -149,7 +149,7 @@ section {
   .letter .social {
     font-size: 2.4rem;
     text-align: center;
-    border-top: 1px dashed #cccccc;
+    border-top: 1px dashed #d4c6ba;
     margin: -2rem -2.4rem;
     margin-top: 3rem;
     overflow: hidden; }
@@ -158,14 +158,14 @@ section {
       font-weight: 400;
       float: left;
       width: 33.3333333%;
-      border-right: 1px dashed #cccccc; }
+      border-right: 1px dashed #d4c6ba; }
       .letter .social li:last-child {
         border: none; }
     .letter .social a {
       text-decoration: none;
       display: block;
       padding: 2rem 2.4rem;
-      color: #8f8f8f; }
+      color: #9c8e81; }
       .letter .social a:hover {
         color: inherit; }
     .letter .social .label {
@@ -225,9 +225,3 @@ section {
 
   .site-header:after {
     width: 420px; } }
-@media screen and (min-width: 1350px) {
-  .site {
-    margin-left: 460px; }
-
-  .site-header:after {
-    width: 460px; } }
