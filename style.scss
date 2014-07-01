@@ -3,7 +3,9 @@
 
 $vdist: 2rem;
 $hdist: $vdist * 1.2;
-$dashed: 1px dashed hsl(29, 23%, 78%);
+$sdist: $hdist * 1.5;
+$dashed: 1px dashed hsl(227, 5%, 78%);
+$max_width: 600px;
 
 @mixin group {
 	content: "";
@@ -33,13 +35,13 @@ html {
 
 body {
 	font-family: 'Source Sans Pro', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
-	color: hsl(29, 23%, 25%);
-	background: hsl(29, 23%, 89%);
+	color: hsl(227, 5%, 25%);
+	background: hsl(227, 5%, 89%);
 	line-height: 1;
 }
 
 a {
-	color: hsl(0, 0%, 30%);
+	color: hsl(227, 5%, 30%);
 
 	&:hover {
 		color: hsl(0%, 0%, 0%);
@@ -54,12 +56,15 @@ a {
 .site {
 	margin: 0 auto;
 	padding: 0 1.8rem;
-	max-width: 680px;
-	height: 100%
+	height: 100%;
+
+	@media (min-width: 420px) {
+		padding: 0 $sdist;
+	}
 }
 
 .site-header	{ 
-	margin: 2rem 0 0; 
+	margin: $vdist 0 0; 
 	text-align: center; 
 
 	h1 { 
@@ -71,7 +76,7 @@ a {
 	p {
 		font-size: 1.8rem;
 		margin: 0.7rem 0 0;
-		color: hsl(29, 16%, 45%);
+		color: hsl(227, 5%, 45%);
 		font-weight: 300;
 	}
 
@@ -81,16 +86,44 @@ a {
 		height: 24rem;
 		background: url(../images/grant.jpg) no-repeat center 10%;
 		background-size: 120%;
-		margin: 2rem -1.8rem 0;
+		margin: $vdist -1.8rem 0;
+
+		@media (min-width: 420px) {
+			height: 30rem;
+			margin-left: -$sdist;
+			margin-right: -$sdist;
+		}
+
+		@media (min-width: 580px) {
+			height: 34rem;
+		}
+
+		@media (min-width: 580px) {
+			height: 34rem;
+		}
+
+		@media (min-width: 630px) {
+			height: 38rem;
+		}
+
+		@media (min-width: 760px) {
+			height: 42rem;
+		}
 	}
 }
 
 section {
-	background: hsl(29, 23%, 98%);
-	margin: 0 0 $hdist * 1.25;
+	margin: 0 auto $hdist * 1.25;
 	font-size: 1.7rem;
 	font-weight: 300;
 	line-height: 1.4em;
+	max-width: $max_width;
+	background: hsl(227, 15%, 98%);
+
+	@media (min-width: 900px) {
+		margin-left: 0;
+		margin-right: 0;
+	}
 
 	& :last-child {
 		margin-bottom: 0;
@@ -110,7 +143,7 @@ section {
 
 	header {
 		@include pad;
-		border-top: 3px solid hsl(29, 24%, 73%);
+		border-top: 3px solid hsl(227, 23%, 73%);
 		border-bottom: $dashed;
 		background: hsl(0, 100%, 100%);
 		position: relative;
@@ -122,7 +155,7 @@ section {
 			span {
 				position: relative;
 				top: 0.2rem;
-				color: hsl(29, 23%, 80%);
+				color: hsl(227, 5%, 80%);
 				float: right;
 				font-size: 24px;
 			}
@@ -151,7 +184,7 @@ section {
 			padding: 0.9rem $hdist;
 
 			&:hover {
-				background: hsl(29, 23%, 90%);
+				background: hsl(227, 5%, 90%);
 			}
 		}
 	}
@@ -167,6 +200,10 @@ section {
 			width: 50%;
 			text-indent: -9999em;
 			height: 12rem;
+
+			@media (min-width: 420px) {
+				width: 33.333333333%;
+			}
 		}
 
 		a {
@@ -248,10 +285,11 @@ section {
 			text-decoration: none;
 			display: block;
 			@include pad;
-			color: hsl(29, 12%, 56%);
+			color: hsl(227, 5%, 56%);
 
 			&:hover {
 				color: inherit;
+				background: hsl(227, 15%, 99%)
 			}
 		}
 
@@ -269,27 +307,6 @@ section {
 }
 
 
-@media screen and (min-width: 420px) {
-	.site {
-		padding: 0 2.4rem;
-	}
-
-	.site-header:after {
-		height: 30rem;
-		margin-left: -2.4rem;
-		margin-right: -2.4rem;
-	}
-
-	section ul.thumbs li {
-		width: 33.333333333%;
-	}
-}
-
-@media screen and (min-width: 580px) {
-	.site-header:after {
-		height: 34rem;
-	}	
-}
 @media screen and (min-width: 900px) {
 
 	$sidebar_width: 360px;
@@ -303,6 +320,7 @@ section {
 		text-align: left;
 		margin: 3rem 0;
 		overflow: hidden; 
+		max-width: $max_width;
 
 		h1 {
 			float: left;
@@ -310,7 +328,7 @@ section {
 
 		p {
 			float: right;
-			margin: 1.2rem 0 0;
+			margin: 1.6rem 0 0;
 			
 		}
 
@@ -325,10 +343,6 @@ section {
 			top: 0;
 		}
 
-	}
-
-	section {
-		margin: 0 0 $hdist * 1.5;
 	}
 
 	.letter {

@@ -12,12 +12,12 @@ html {
 
 body {
   font-family: 'Source Sans Pro', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
-  color: #4e3f31;
-  background: #e9e3dc;
+  color: #3d3e43;
+  background: #e2e2e4;
   line-height: 1; }
 
 a {
-  color: #4d4d4d; }
+  color: #494a50; }
   a:hover {
     color: black; }
 
@@ -28,8 +28,10 @@ a {
 .site {
   margin: 0 auto;
   padding: 0 1.8rem;
-  max-width: 680px;
   height: 100%; }
+  @media (min-width: 420px) {
+    .site {
+      padding: 0 3.6rem; } }
 
 .site-header {
   margin: 2rem 0 0;
@@ -41,7 +43,7 @@ a {
   .site-header p {
     font-size: 1.8rem;
     margin: 0.7rem 0 0;
-    color: #857260;
+    color: #6d6f78;
     font-weight: 300; }
   .site-header:after {
     content: "";
@@ -50,13 +52,35 @@ a {
     background: url(../images/grant.jpg) no-repeat center 10%;
     background-size: 120%;
     margin: 2rem -1.8rem 0; }
+    @media (min-width: 420px) {
+      .site-header:after {
+        height: 30rem;
+        margin-left: -3.6rem;
+        margin-right: -3.6rem; } }
+    @media (min-width: 580px) {
+      .site-header:after {
+        height: 34rem; } }
+    @media (min-width: 580px) {
+      .site-header:after {
+        height: 34rem; } }
+    @media (min-width: 630px) {
+      .site-header:after {
+        height: 38rem; } }
+    @media (min-width: 760px) {
+      .site-header:after {
+        height: 42rem; } }
 
 section {
-  background: #fbfaf9;
-  margin: 0 0 3rem;
+  margin: 0 auto 3rem;
   font-size: 1.7rem;
   font-weight: 300;
-  line-height: 1.4em; }
+  line-height: 1.4em;
+  max-width: 600px;
+  background: #f9f9fb; }
+  @media (min-width: 900px) {
+    section {
+      margin-left: 0;
+      margin-right: 0; } }
   section :last-child {
     margin-bottom: 0; }
   section h2 {
@@ -69,8 +93,8 @@ section {
     margin: 0 0 0.9rem; }
   section header {
     padding: 2rem 2.4rem;
-    border-top: 3px solid #cbbaaa;
-    border-bottom: 1px dashed #d4c6ba;
+    border-top: 3px solid #aab1ca;
+    border-bottom: 1px dashed #c4c5ca;
     background: white;
     position: relative;
     overflow: hidden; }
@@ -79,7 +103,7 @@ section {
       section header h2 span {
         position: relative;
         top: 0.2rem;
-        color: #d8ccc0;
+        color: #c9cbcf;
         float: right;
         font-size: 24px; }
     section header p {
@@ -97,7 +121,7 @@ section {
       line-height: 1.2em;
       padding: 0.9rem 2.4rem; }
       section ul.block a:hover {
-        background: #ebe5e0; }
+        background: #e4e5e7; }
   section ul.thumbs:after {
     content: "";
     display: table;
@@ -107,6 +131,9 @@ section {
     width: 50%;
     text-indent: -9999em;
     height: 12rem; }
+    @media (min-width: 420px) {
+      section ul.thumbs li {
+        width: 33.333333333%; } }
   section ul.thumbs a {
     display: block;
     background-repeat: no-repeat;
@@ -149,7 +176,7 @@ section {
   .letter .social {
     font-size: 2.4rem;
     text-align: center;
-    border-top: 1px dashed #d4c6ba;
+    border-top: 1px dashed #c4c5ca;
     margin: -2rem -2.4rem;
     margin-top: 3rem;
     overflow: hidden; }
@@ -158,16 +185,17 @@ section {
       font-weight: 400;
       float: left;
       width: 33.3333333%;
-      border-right: 1px dashed #d4c6ba; }
+      border-right: 1px dashed #c4c5ca; }
       .letter .social li:last-child {
         border: none; }
     .letter .social a {
       text-decoration: none;
       display: block;
       padding: 2rem 2.4rem;
-      color: #9c8e81; }
+      color: #898c94; }
       .letter .social a:hover {
-        color: inherit; }
+        color: inherit;
+        background: #fcfcfd; }
     .letter .social .label {
       position: absolute;
       left: -99999em; }
@@ -176,20 +204,6 @@ section {
   padding: 2rem 2.4rem;
   text-align: center; }
 
-@media screen and (min-width: 420px) {
-  .site {
-    padding: 0 2.4rem; }
-
-  .site-header:after {
-    height: 30rem;
-    margin-left: -2.4rem;
-    margin-right: -2.4rem; }
-
-  section ul.thumbs li {
-    width: 33.333333333%; } }
-@media screen and (min-width: 580px) {
-  .site-header:after {
-    height: 34rem; } }
 @media screen and (min-width: 900px) {
   .site {
     margin: 0 0 0 360px;
@@ -198,12 +212,13 @@ section {
   .site-header {
     text-align: left;
     margin: 3rem 0;
-    overflow: hidden; }
+    overflow: hidden;
+    max-width: 600px; }
     .site-header h1 {
       float: left; }
     .site-header p {
       float: right;
-      margin: 1.2rem 0 0; }
+      margin: 1.6rem 0 0; }
     .site-header:after {
       background-position: 45% top;
       background-size: cover;
@@ -213,9 +228,6 @@ section {
       position: fixed;
       left: 0;
       top: 0; }
-
-  section {
-    margin: 0 0 3.6rem; }
 
   .letter {
     margin-top: 0; } }
