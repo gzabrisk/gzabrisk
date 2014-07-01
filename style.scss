@@ -23,6 +23,12 @@ hr								{ background: #ddd; color: #ddd; clear: both; float: none; width: 100%
 
 $vdist: 2rem;
 $hdist: 2.4rem;
+$dashed: 1px dashed hsl(0, 0%, 80%);
+
+@mixin flush {
+	margin: (-$vdist) (-$hdist);
+	padding: $vdist $hdist;
+}
 
 html { 
 	font-size: 62.5%;
@@ -32,7 +38,7 @@ html {
 body {
 	font-family: 'Source Sans Pro', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
 	color: hsl(0, 0%, 25%);
-	background: hsl(0, 0%, 95%);
+	background: hsl(0, 0%, 90%);
 	line-height: 1;
 }
 
@@ -42,12 +48,6 @@ a {
 	&:hover {
 		color: hsl(0%, 0%, 0%);
 	}
-}
-
-hr {
-	background: none;
-	margin: ($hdist * 1.25) 0 ($hdist * 1.25);
-	border-bottom: 1px dashed hsl(0, 0%, 80%);
 }
 
 .hidden {
@@ -90,16 +90,17 @@ hr {
 }
 
 section {
-
-	background: hsl(0, 100%, 100%);
+	background: hsl(0, 0%, 98%);
 	padding: $vdist $hdist;
 	margin: 0 0 $hdist * 1.25;
 	font-size: 1.7rem;
 	font-weight: 300;
 	line-height: 1.4em;
-	border-radius: 2px;
-	overflow: hidden;
-	box-shadow: 0 0 3px hsla(223, 9%, 40%, 0.3);
+
+	& :last-child {
+		margin-bottom: 0;
+	}
+	
 
 	h2 {
 		font-weight: 300;
@@ -116,14 +117,16 @@ section {
 	header {
 		margin: (-$vdist) (-$hdist) $vdist;
 		padding: $vdist $hdist;	
-		border-bottom: 1px dashed hsl(0, 0%, 85%);
+		border-top: 3px solid hsl(0, 0%, 75%);
+		border-bottom: $dashed;
+		background: hsl(0, 100%, 100%);
 
 		h2	{
 			margin: 0 0 $vdist/1.5;
 		}
 
 		p {
-			font-size: 1.5rem;
+			font-size: 1.6rem;
 			line-height: 1.4em;
 		}
 
@@ -148,6 +151,7 @@ section {
 
 	.video {
 		position: relative;
+		@include flush;
 		padding-bottom: 56.25%;
 		padding-top: 30px;
 		height: 0;
@@ -161,7 +165,7 @@ section {
 			height: 100%;
 		}
 	}
-	
+
 }
 
 
@@ -169,7 +173,6 @@ section {
 	font-size: 1.8rem;
 	font-weight: 300;
 	margin-top: -4rem;
-	margin-bottom: 2.4rem;
 
 	h1, p {
 		margin: 0 0 1em;
@@ -181,23 +184,23 @@ section {
 		font-style: italic;
 	}
 	
-}
+	.social {
+		font-size: 1.6rem;
+		text-align: center;
+		border-top: $dashed;
+		@include flush;
+		margin-top: $vdist;
+		
+		li {
+			display: inline;
+			margin: 0 0.5em;
+			font-weight: 400;
+		}
 
-.social {
-	font-size: 1.6rem;
-	text-align: center;
-	
-	li {
-		display: inline;
-		margin: 0 0.5em;
-		font-weight: 400;
 	}
-
 }
 
-section :last-child {
-	margin-bottom: 0;
-}
+
 
 
 @media screen and (min-width: 420px) {

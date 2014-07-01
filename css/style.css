@@ -66,18 +66,13 @@ html {
 body {
   font-family: 'Source Sans Pro', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
   color: #404040;
-  background: #f2f2f2;
+  background: #e6e6e6;
   line-height: 1; }
 
 a {
   color: #4d4d4d; }
   a:hover {
     color: black; }
-
-hr {
-  background: none;
-  margin: 3rem 0 3rem;
-  border-bottom: 1px dashed #cccccc; }
 
 .hidden {
   position: absolute;
@@ -110,15 +105,14 @@ hr {
     margin: 2rem -1.8rem 0; }
 
 section {
-  background: white;
+  background: #fafafa;
   padding: 2rem 2.4rem;
   margin: 0 0 3rem;
   font-size: 1.7rem;
   font-weight: 300;
-  line-height: 1.4em;
-  border-radius: 2px;
-  overflow: hidden;
-  box-shadow: 0 0 3px rgba(93, 98, 111, 0.3); }
+  line-height: 1.4em; }
+  section :last-child {
+    margin-bottom: 0; }
   section h2 {
     font-weight: 300;
     font-size: 2rem;
@@ -130,11 +124,13 @@ section {
   section header {
     margin: -2rem -2.4rem 2rem;
     padding: 2rem 2.4rem;
-    border-bottom: 1px dashed #d9d9d9; }
+    border-top: 3px solid #bfbfbf;
+    border-bottom: 1px dashed #cccccc;
+    background: white; }
     section header h2 {
       margin: 0 0 1.33333rem; }
     section header p {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       line-height: 1.4em; }
     section header a {
       color: inherit; }
@@ -150,6 +146,8 @@ section {
       background: #e6e6e6; }
   section .video {
     position: relative;
+    margin: -2rem -2.4rem;
+    padding: 2rem 2.4rem;
     padding-bottom: 56.25%;
     padding-top: 30px;
     height: 0;
@@ -164,25 +162,24 @@ section {
 .letter {
   font-size: 1.8rem;
   font-weight: 300;
-  margin-top: -4rem;
-  margin-bottom: 2.4rem; }
+  margin-top: -4rem; }
   .letter h1, .letter p {
     margin: 0 0 1em;
     line-height: 1.4em; }
   .letter .name {
     font-size: 2rem;
     font-style: italic; }
-
-.social {
-  font-size: 1.6rem;
-  text-align: center; }
-  .social li {
-    display: inline;
-    margin: 0 0.5em;
-    font-weight: 400; }
-
-section :last-child {
-  margin-bottom: 0; }
+  .letter .social {
+    font-size: 1.6rem;
+    text-align: center;
+    border-top: 1px dashed #cccccc;
+    margin: -2rem -2.4rem;
+    padding: 2rem 2.4rem;
+    margin-top: 2rem; }
+    .letter .social li {
+      display: inline;
+      margin: 0 0.5em;
+      font-weight: 400; }
 
 @media screen and (min-width: 420px) {
   .site {
