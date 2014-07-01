@@ -2,7 +2,7 @@
 /* --------------------------------------------------- */
 
 $vdist: 2rem;
-$hdist: 2.4rem;
+$hdist: $vdist * 1.2;
 $dashed: 1px dashed hsl(0, 0%, 80%);
 
 @mixin pad {
@@ -11,7 +11,13 @@ $dashed: 1px dashed hsl(0, 0%, 80%);
 
 @mixin flush {
 	margin: (-$vdist) (-$hdist);
-	@include pad;
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 html { 
@@ -22,7 +28,7 @@ html {
 body {
 	font-family: 'Source Sans Pro', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
 	color: hsl(0, 0%, 25%);
-	background: hsl(0, 0%, 90%);
+	background: hsl(0, 0%, 89%);
 	line-height: 1;
 }
 
@@ -42,7 +48,7 @@ a {
 .site {
 	margin: 0 auto;
 	padding: 0 1.8rem;
-	max-width: 580px;
+	max-width: 660px;
 	height: 100%
 }
 
@@ -83,7 +89,6 @@ section {
 	& :last-child {
 		margin-bottom: 0;
 	}
-	
 
 	h2 {
 		font-weight: 300;
@@ -102,9 +107,19 @@ section {
 		border-top: 3px solid hsl(0, 0%, 75%);
 		border-bottom: $dashed;
 		background: hsl(0, 100%, 100%);
+		position: relative;
+		overflow: hidden;
 
 		h2	{
 			margin: 0 0 $vdist/1.5;
+
+			span {
+				position: relative;
+				top: 0.2rem;
+				color: hsl(0, 0%, 80%);
+				float: right;
+				font-size: 24px;
+			}
 		}
 
 		p {
@@ -115,6 +130,7 @@ section {
 		a {
 			color: inherit;
 		}
+
 	}
 
 	ul.block {
@@ -126,7 +142,7 @@ section {
 			text-decoration: none;
 			display: block;
 			line-height: 1.2em;
-			padding: 0.9rem 2.4rem;
+			padding: 0.9rem $hdist;
 
 			&:hover {
 				background: hsl(0, 0%, 90%);
@@ -154,7 +170,6 @@ section {
 
 .letter {
 	font-size: 1.8rem;
-	font-weight: 300;
 	margin-top: -4rem;
 	@include pad;
 
@@ -169,16 +184,35 @@ section {
 	}
 	
 	.social {
-		font-size: 1.6rem;
+		font-size: 2.4rem;
 		text-align: center;
 		border-top: $dashed;
 		@include flush;
-		margin-top: $vdist;
+		margin-top: $hdist * 1.25;
+		overflow: hidden;
 		
 		li {
 			display: inline;
-			margin: 0 0.5em;
 			font-weight: 400;
+			float: left;
+			width: 33.3333333%;
+			border-right: $dashed;
+		}
+
+		a {
+			text-decoration: none;
+			display: block;
+			@include pad;
+			color: hsl(0, 0%, 56%);
+
+			&:hover {
+				color: inherit;
+			}
+		}
+
+		.label {
+			position: absolute;
+			left: -99999em;
 		}
 
 	}
@@ -210,7 +244,7 @@ section {
 @media screen and (min-width: 900px) {
 
 	.site {
-		margin: 0 0 0 35%;
+		margin: 0 0 0 420px;
 		padding: 0 5rem;
 	}
 
@@ -230,11 +264,11 @@ section {
 		}
 
 		&:after {
-			background-position: center top;
+			background-position: 45% top;
 			background-size: cover;
 			margin: 0;
 			height: 100%;
-			width: 35%;
+			width: 420px;
 			position: fixed;
 			left: 0;
 			top: 0;
