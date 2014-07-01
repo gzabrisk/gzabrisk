@@ -54,7 +54,7 @@ a {
 .site {
 	margin: 0 auto;
 	padding: 0 1.8rem;
-	max-width: 660px;
+	max-width: 680px;
 	height: 100%
 }
 
@@ -265,6 +265,7 @@ section {
 
 .more {
 	@include pad;
+	text-align: center;
 }
 
 
@@ -291,8 +292,10 @@ section {
 }
 @media screen and (min-width: 900px) {
 
+	$sidebar_width: 360px;
+
 	.site {
-		margin: 0 0 0 420px;
+		margin: 0 0 0 $sidebar_width;
 		padding: 0 5rem;
 	}
 
@@ -316,7 +319,7 @@ section {
 			background-size: cover;
 			margin: 0;
 			height: 100%;
-			width: 420px;
+			width: $sidebar_width;
 			position: fixed;
 			left: 0;
 			top: 0;
@@ -334,7 +337,30 @@ section {
 
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 1200px) {
+	$sidebar_width: 420px;
+
+	.site {
+		margin-left: $sidebar_width;
+	}
+
+	.site-header:after {
+		width: $sidebar_width;
+	}
+
+}
+
+@media screen and (min-width: 1350px) {
+	$sidebar_width: 460px;
+
+	.site {
+		margin-left: $sidebar_width;
+	}
+
+	.site-header:after {
+		width: $sidebar_width;
+	}
+
 
 
 }
