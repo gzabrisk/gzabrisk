@@ -1,62 +1,3 @@
-/* Reset */
-/* --------------------------------------------------- */
-html {
-  margin: 0;
-  padding: 0;
-  border: 0; }
-
-body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, dialog, figure, footer, header, hgroup, nav, section {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline; }
-
-article, aside, details, figcaption, figure, dialog, footer, header, hgroup, menu, nav, section {
-  display: block; }
-
-body {
-  line-height: 1.5;
-  background: white; }
-
-table {
-  border-collapse: separate;
-  border-spacing: 0; }
-
-caption, th, td {
-  text-align: left;
-  font-weight: normal;
-  float: none !important; }
-
-table, th, td {
-  vertical-align: middle; }
-
-blockquote:before, blockquote:after, q:before, q:after {
-  content: ''; }
-
-blockquote, q {
-  quotes: "" ""; }
-
-a img {
-  border: none; }
-
-ul {
-  list-style: none; }
-
-:focus {
-  outline: 0; }
-
-hr {
-  background: #ddd;
-  color: #ddd;
-  clear: both;
-  float: none;
-  width: 100%;
-  height: 1px;
-  margin: 0 0 17px;
-  border: none; }
-
 /* Core */
 /* --------------------------------------------------- */
 html {
@@ -106,7 +47,6 @@ a {
 
 section {
   background: #fafafa;
-  padding: 2rem 2.4rem;
   margin: 0 0 3rem;
   font-size: 1.7rem;
   font-weight: 300;
@@ -122,7 +62,6 @@ section {
   section p {
     margin: 0 0 0.9rem; }
   section header {
-    margin: -2rem -2.4rem 2rem;
     padding: 2rem 2.4rem;
     border-top: 3px solid #bfbfbf;
     border-bottom: 1px dashed #cccccc;
@@ -134,20 +73,19 @@ section {
       line-height: 1.4em; }
     section header a {
       color: inherit; }
-  section ul.block a {
-    font-weight: 600;
-    font-size: 1.6rem;
-    text-decoration: none;
-    display: block;
-    line-height: 1.2em;
-    padding: 0.9rem 2.4rem;
-    margin: 0 -2.4rem; }
-    section ul.block a:hover {
-      background: #e6e6e6; }
+  section ul.block {
+    padding: 1.5rem 0; }
+    section ul.block a {
+      font-weight: 600;
+      font-size: 1.6rem;
+      text-decoration: none;
+      display: block;
+      line-height: 1.2em;
+      padding: 0.9rem 2.4rem; }
+      section ul.block a:hover {
+        background: #e6e6e6; }
   section .video {
     position: relative;
-    margin: -2rem -2.4rem;
-    padding: 2rem 2.4rem;
     padding-bottom: 56.25%;
     padding-top: 30px;
     height: 0;
@@ -162,7 +100,8 @@ section {
 .letter {
   font-size: 1.8rem;
   font-weight: 300;
-  margin-top: -4rem; }
+  margin-top: -4rem;
+  padding: 2rem 2.4rem; }
   .letter h1, .letter p {
     margin: 0 0 1em;
     line-height: 1.4em; }
@@ -180,6 +119,9 @@ section {
       display: inline;
       margin: 0 0.5em;
       font-weight: 400; }
+
+.more {
+  padding: 2rem 2.4rem; }
 
 @media screen and (min-width: 420px) {
   .site {
