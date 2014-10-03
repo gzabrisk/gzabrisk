@@ -9,6 +9,7 @@ $hdist: $vdist * 1.2;
 $sdist: $hdist * 1.5;
 $dashed: 1px dashed hsl(227, 5%, 78%);
 $max_width: 600px;
+$body_bg: hsl(227, 5%, 89%);
 
 @mixin group {
 	content: "";
@@ -39,7 +40,7 @@ html {
 body {
 	font-family: 'Source Sans Pro', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
 	color: hsl(227, 5%, 25%);
-	background: hsl(227, 5%, 89%);
+	background: $body_bg;
 	line-height: 1;
 }
 
@@ -246,6 +247,36 @@ section {
 		}
 	}
 
+	.banner.dti a {
+		$dti_color: hsl(194, 40%, 47%);
+
+		display: block;
+		text-decoration: none;
+		background: $dti_color;
+		color: hsl(0, 100%, 100%);
+		font-family: 'Open Sans', 'Source Sans Pro', sans-serif;
+		text-align: center;
+		padding: 20% $hdist;
+		transition: 0.2s all ease;
+
+		h3 {
+			font-size: 3.4rem;
+			font-weight: 600;
+			line-height: 1em;
+			margin: 0 0 0.5em; 
+		}
+
+		p {
+			font-weight: 300;
+			color: lighten($dti_color, 40%);
+			line-height: 1.3em;
+		}
+
+		&:hover {
+			background: darken($dti_color, 3%);
+		}
+	}
+
 }
 
 .letter {
@@ -307,6 +338,14 @@ section {
 .more {
 	@include pad;
 	text-align: center;
+}
+
+footer {
+	text-align: center;
+	font-size: 1.6rem;
+	color: darken($body_bg, 35%);
+	max-width: $max_width;
+	padding: $vdist 0 $vdist * 2;
 }
 
 
