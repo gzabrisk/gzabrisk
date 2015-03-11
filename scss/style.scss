@@ -193,6 +193,25 @@ section {
 		}
 	}
 
+	a.thumb {
+		display: block;
+		background-color: hsl(214, 12%, 21%);
+		background-image: url(../images/hbll.jpg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center top;
+		padding-bottom: 56.25%;
+		text-align: center;
+		text-indent: -9999em;
+		position: relative;
+		opacity: 1; 
+		transition: opacity ease 0.1s;
+
+		&:hover {
+			opacity: 0.9;
+		}
+	}
+
 	ul.thumbs {
 
 		&:after {

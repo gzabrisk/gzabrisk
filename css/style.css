@@ -216,6 +216,21 @@ section {
       padding: 0.9rem 2.4rem; }
       section ul.block a:hover {
         background: #e4e5e7; }
+  section a.thumb {
+    display: block;
+    background-color: #2f353c;
+    background-image: url(../images/hbll.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    padding-bottom: 56.25%;
+    text-align: center;
+    text-indent: -9999em;
+    position: relative;
+    opacity: 1;
+    transition: opacity ease 0.1s; }
+    section a.thumb:hover {
+      opacity: 0.9; }
   section ul.thumbs:after {
     content: "";
     display: table;
